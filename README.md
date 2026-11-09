@@ -145,6 +145,12 @@ CONTAINER ID   NAME                   CPU %     MEM USAGE / LIMIT     MEM %     
 5b2251c71663   compose-basic-web2-1   0.00%     20.04MiB / 15.25GiB   0.13%     3.8kB / 1.61kB   0B / 12.3kB      25
 956f59d3bf5b   compose-basic-web1-1   0.00%     19.32MiB / 15.25GiB   0.12%     1.75kB / 126B    0B / 12.3kB      25
 26453bf19c07   my-container           0.00%     22.92MiB / 15.25GiB   0.15%     2.22kB / 126B    9.66MB / 4.1kB   25
+
+Hello from Docker!
+
+This message shows that your installation appears to be working correctly.
+
+
 ---
 
 ## 🐳 5. Dockerfile 기반 웹 서버 컨테이너
