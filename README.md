@@ -273,6 +273,49 @@ docker compose config    # 변수 치환 결과 확인
 **결과:** ![alt text](image-1.png) → localhost:8081,![alt text](image.png) localhost:8082 접속 확인
 
 ---
+## 9.파일 권한 실습 (Ubuntu 컨테이너)
+
+Ubuntu 컨테이너에 접속하여 리눅스 파일 권한(chmod)을 실습했다.
+
+### 1. Ubuntu 컨테이너 실행 및 진입
+```bash
+docker run -it ubuntu bash
+-it 옵션으로 컨테이너 내부 bash에 접속한다.
+
+2. 실습용 파일 생성
+bash
+📋 복사
+touch test.txt
+ls -l
+ls -l로 파일의 현재 권한을 확인한다.
+
+3. 권한 755 부여 (실행 파일용)
+bash
+📋 복사
+chmod 755 test.txt
+ls -l
+소유자(user): 읽기+쓰기+실행 (rwx)
+그룹(group): 읽기+실행 (r-x)
+기타(other): 읽기+실행 (r-x)
+4. 권한 644 부여 (일반 파일용)
+bash
+📋 복사
+chmod 644 test.txt
+ls -l
+소유자(user): 읽기+쓰기 (rw-)
+그룹(group): 읽기 (r--)
+기타(other): 읽기 (r--)
+권한 숫자의 의미
+숫자	권한	의미
+4	r (읽기)	read
+2	w (쓰기)	write
+1	x (실행)	execute
+각 자리는 (소유자)(그룹)(기타) 순서이며,
+숫자를 더해서 권한을 조합한다.
+예) 7 = 4+2+1 = rwx, 6 = 4+2 = rw-, 5 = 4+1 = r-x
+c:\Users\dktktkddhks4830\Pictures\Screenshots\스크린샷 2026-11-04 151708.png
+c:\Users\dktktkddhks4830\Pictures\Screenshots\스크린샷 2026-11-04 153522.png
+---
 
 ## ⚙️ 9. Git 설정 및 GitHub 연동
 
