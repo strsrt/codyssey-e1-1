@@ -1,0 +1,15 @@
+services:
+  web1:                              # 서비스 이름 (내 맘대로 지음)
+    image: nginx:alpine
+    ports:
+      - "8081:80"                    # 호스트 8081 → 컨테이너 80
+    volumes:
+      - ./html1:/usr/share/nginx/html
+
+  web2:                              # 두 번째 서비스
+    image: nginx:alpine
+    ports:
+      - "8082:80"                    # 호스트 8082 → 컨테이너 80
+    volumes:
+      - ./html2:/usr/share/nginx/html
+      
